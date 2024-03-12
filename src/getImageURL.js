@@ -1,6 +1,11 @@
 const sleep = (ms = 0) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export const getImageURL = async (prompt) => {
+  const token = import.meta.env.VITE_API_TOKEN;
+  const discord = import.meta.env.VITE_DISCORD_TOKEN;
+  const server = import.meta.env.VITE_SERVER_ID;
+  const channel = import.meta.env.VITE_CHANNEL_ID;
+
   const data = {
     method: "POST",
     headers: {
