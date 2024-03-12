@@ -1,0 +1,45 @@
+@import "../../styles/colors.scss";
+
+.button {
+  height: 55px;
+  width: 100%;
+  background-color: $primary;
+  color: white;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 2px;
+  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    background-color: $hover;
+  }
+
+  &:active {
+    background-color: $active;
+  }
+
+  &.disabled {
+    background-color: $disabled;
+    pointer-events: none;
+    border-color: $disabled;
+    box-shadow: none;
+  }
+
+  &.secondary {
+    background-color: white;
+    color: black;
+
+    &:hover {
+      background-color: $hover;
+      color: white;
+    }
+
+    &:active {
+      background-color: $active;
+      color: white;
+    }
+  }
+}
