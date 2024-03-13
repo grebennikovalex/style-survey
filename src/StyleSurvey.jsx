@@ -19,14 +19,15 @@ export default function StyleSurvey() {
   const { control, setValue, getValues } = form;
 
   const yesColorValue = useWatch({ control, name: "yesColor" });
-  const noColorValue = useWatch({ control, name: "noColor" });
 
   useEffect(() => {
     setUnwantedColors(colors.filter((color) => yesColorValue !== color.value));
   }, [yesColorValue, setUnwantedColors]);
 
   useEffect(() => {
-    setValue("noColor", unwantedColors[0].value);
+    let ind = colors.map((o) => o.value).indexOf(yesColorValue);
+    if (ind + 1 > unwantedColors.length) ind = 0;
+    setValue("noColor", unwantedColors[ind].value);
   }, [getValues, unwantedColors]);
 
   return (

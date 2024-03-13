@@ -1,0 +1,32 @@
+@import "../../styles/colors.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 24px;
+  border-radius: 4px;
+  background-color: $disabled;
+  color: $secondary-text;
+
+  &.started {
+    background-color: $alert-initial-bg;
+  }
+
+  &.progress {
+    background-color: $alert-progress-bg;
+  }
+
+  &.error {
+    background-color: $alert-error-bg;
+  }
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.text {
+  font-size: 12px;
+  font-weight: 100;
+}

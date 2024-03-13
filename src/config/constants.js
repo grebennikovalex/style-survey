@@ -9,8 +9,9 @@ export const styles = [
   { value: "modern minimalist", label: "Современный минимализм" },
   { value: "modern", label: "Современный" },
   { value: "classical", label: "Классический" },
-  { value: "Art Deco", label: "Ар-деко" },
+  { value: "Art Deco", label: "Ар-деко 1920-е годы XX века" },
   { value: "Art Nouveau", label: "Модерн начала XX века" },
+  { value: "Mid Sentury", label: "Модернизм середины XX века" },
   { value: "Country", label: "Кантри" },
   { value: "Provence", label: "Прованс" },
   { value: "Mediterranean", label: "Средиземноморский" },
@@ -21,6 +22,7 @@ export const colors = [
   { value: "beige", label: "Бежевый" },
   { value: "pink", label: "Розовый" },
   { value: "light blue", label: "Голубой" },
+  { value: "blue", label: "Синий" },
   { value: "yellow", label: "Желтый" },
   { value: "red", label: "Красный" },
   { value: "green", label: "Зеленый" },
@@ -32,7 +34,6 @@ export const floors = [
   { value: "cement", label: "Цемент" },
   { value: "plank wood", label: "Доска" },
   { value: "carpet", label: "Ковровое" },
-  { value: "linoleum", label: "Линолеум" },
 ];
 
 export const plants = [
