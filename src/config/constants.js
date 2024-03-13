@@ -6,9 +6,9 @@ export const rooms = [
 ];
 
 export const styles = [
+  { value: "modern minimalist", label: "Современный минимализм" },
+  { value: "modern", label: "Современный" },
   { value: "classical", label: "Классический" },
-  { value: "Modern", label: "Современный" },
-  { value: "Modern minimalist", label: "Современный минимализм" },
   { value: "Art Deco", label: "Ар-деко" },
   { value: "Art Nouveau", label: "Модерн начала XX века" },
   { value: "Country", label: "Кантри" },

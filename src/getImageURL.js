@@ -118,6 +118,8 @@ export const getImageURL = async (prompt) => {
             retry = false;
           } else if (result.status == "started" || result.status == "progress") {
             console.log(`attempt #${attempt} sleeping for 5 secs...`, result.status);
+            if (result.status == "started") {
+            }
             await sleep(5 * 1000);
           } else {
             console.error(`Unexpected result.status`, result.status);
