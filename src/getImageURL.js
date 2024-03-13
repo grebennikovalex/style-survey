@@ -6,8 +6,6 @@ export const getImageURL = async (prompt) => {
   const server = import.meta.env.VITE_SERVER_ID;
   const channel = import.meta.env.VITE_CHANNEL_ID;
 
-  console.log(token);
-
   const data = {
     method: "POST",
     headers: {

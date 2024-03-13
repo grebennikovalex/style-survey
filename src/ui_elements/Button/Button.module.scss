@@ -21,10 +21,6 @@
     background-color: $hover;
   }
 
-  &:active {
-    background-color: $active;
-  }
-
   &.disabled {
     background-color: $disabled;
     pointer-events: none;
@@ -38,11 +34,6 @@
 
     &:hover {
       background-color: $hover;
-      color: white;
-    }
-
-    &:active {
-      background-color: $active;
       color: white;
     }
   }
