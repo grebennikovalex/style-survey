@@ -3,7 +3,7 @@ export const room = {
   label: "Выберите помещение",
 };
 
-export const style = {
+export const interiorStyle = {
   name: "style",
   label: "Какой из стилей интерьеров вам ближе?",
 };

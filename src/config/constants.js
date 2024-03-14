@@ -1,17 +1,22 @@
 export const rooms = [
   { value: "Living room", label: "Гостиная" },
-  { value: "Bedroom", label: "Спальня" },
+  { value: "Dining room", label: "Столовая" },
+  { value: "Dining room with kitchen", label: "Кухня-столовая" },
   { value: "Kitchen", label: "Кухня" },
+  { value: "Bedroom", label: "Спальня" },
+  { value: "Kid's room", label: "Детская" },
+  { value: "Study room", label: "Кабинет" },
   { value: "Bathroom", label: "Ванная" },
 ];
 
-export const styles = [
+export const styleList = [
   { value: "modern minimalist", label: "Современный минимализм" },
   { value: "modern", label: "Современный" },
+  { value: "loft", label: "Лофт" },
   { value: "classical", label: "Классический" },
   { value: "Art Deco", label: "Ар-деко 1920-е годы XX века" },
   { value: "Art Nouveau", label: "Модерн начала XX века" },
-  { value: "Mid Sentury", label: "Модернизм середины XX века" },
+  { value: "Mid-century", label: "Модернизм середины XX века" },
   { value: "Country", label: "Кантри" },
   { value: "Provence", label: "Прованс" },
   { value: "Mediterranean", label: "Средиземноморский" },
@@ -19,6 +24,7 @@ export const styles = [
 
 export const colors = [
   { value: "white", label: "Белый" },
+  { value: "gray", label: "Серый" },
   { value: "beige", label: "Бежевый" },
   { value: "pink", label: "Розовый" },
   { value: "light blue", label: "Голубой" },
@@ -40,8 +46,8 @@ export const plants = [
   { value: "phytowall plants", label: '"Зелёная"  стена' },
   { value: "stabilized plants", label: "Стабилизированные растения" },
   { value: "phytowall moss", label: "Мох" },
-  { value: "big pot plants", label: "Комнатные большие растения" },
-  { value: "small pot plants", label: "Комнатные маленькие растения" },
+  { value: "bigger pot plants", label: "Комнатные большие растения" },
+  { value: "smaller pot plants", label: "Комнатные маленькие растения" },
   { value: "no", label: "Не нужно зелени" },
   { value: "indifferent", label: "Не принципиально" },
 ];

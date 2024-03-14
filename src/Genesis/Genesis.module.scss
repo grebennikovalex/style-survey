@@ -1,0 +1,12 @@
+@import "../styles/colors.scss";
+
+.fieldsContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+
+  @media (max-width: "425px") {
+    flex-direction: column;
+  }
+}
