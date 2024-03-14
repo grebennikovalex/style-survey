@@ -17,6 +17,11 @@
   border-radius: 2px;
   box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.2);
 
+  @media (max-width: "425px") {
+    height: 42px;
+    font-size: 14px;
+  }
+
   &:hover {
     background-color: $hover;
   }

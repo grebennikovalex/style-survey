@@ -11,15 +11,18 @@ export const rooms = [
 
 export const styleList = [
   { value: "modern minimalist", label: "Современный минимализм" },
-  { value: "modern", label: "Современный" },
+  { value: "modern classical", label: "Современная классика" },
   { value: "loft", label: "Лофт" },
-  { value: "classical", label: "Классический" },
-  { value: "Art Deco", label: "Ар-деко 1920-е годы XX века" },
   { value: "Art Nouveau", label: "Модерн начала XX века" },
-  { value: "Mid-century", label: "Модернизм середины XX века" },
-  { value: "Country", label: "Кантри" },
-  { value: "Provence", label: "Прованс" },
-  { value: "Mediterranean", label: "Средиземноморский" },
+  { value: "Art Deco", label: "Ар-деко 1920-е годы XX века" },
+  { value: "mid-century", label: "Модернизм середины XX века" },
+  { value: "scandinavian", label: "Скандинавский" },
+  { value: "country", label: "Кантри" },
+  { value: "provence", label: "Прованс" },
+  { value: "mediterranean", label: "Средиземноморский" },
+  { value: "russian", label: "Русский" },
+  { value: "chalet", label: "Шале" },
+  { value: "boho-chic", label: "Бохо" },
 ];
 
 export const colors = [

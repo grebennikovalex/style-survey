@@ -20,7 +20,10 @@ export default function GenContainer() {
 
   const form = useFormContext();
 
-  const { getValues } = form;
+  const {
+    getValues,
+    formState: { isValid },
+  } = form;
 
   const generate = async () => {
     setAlertType("started");
@@ -178,7 +181,7 @@ export default function GenContainer() {
 
   return (
     <>
-      <Button disabled={loading} loading={loading} type="primary" text={"СГЕНЕРИРОВАТЬ"} onClick={generate} />
+      <Button disabled={loading || !isValid} loading={loading} type="primary" text={"СГЕНЕРИРОВАТЬ"} onClick={generate} />
       {loading && <Alert type={alertType} text={alertText} />}
       {url && (
         <a href={url} target="_blank" style={{ width: "100%" }}>
