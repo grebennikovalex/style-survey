@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Button from "../ui_elements/Button/Button";
 import { useFormContext } from "react-hook-form";
+import { createPrompt } from "../createPrompt";
 
 const Host = import.meta.env.VITE_HOST;
 const Username = import.meta.env.VITE_USERNAME;
@@ -22,8 +23,8 @@ export default function SendButton({ url }) {
       Host,
       Username,
       Password,
-      //   To: "tatiana.kotulevich@yandex.ru",
-      To: "a-greb@yandex.ru",
+      To: "tatiana.kotulevich@yandex.ru",
+      // To: "alexander.v.grebennikov@gmail.com",
       From: "a-greb@yandex.ru",
       Subject: "Генезис",
       Body: `<html>
@@ -41,5 +42,5 @@ export default function SendButton({ url }) {
       setLoading(false);
     }
   };
-  return <Button disabled={sent} loading={loading} type="primary" text={sent ? "ОТПРАВЛЕНО" : "ОТПРАВИТЬ РЕЗУЛЬТАТ"} onClick={send} />;
+  return <Button disabled={sent || loading} loading={loading} type="primary" text={sent ? "ОТПРАВЛЕНО" : "ОТПРАВИТЬ РЕЗУЛЬТАТ"} onClick={send} />;
 }

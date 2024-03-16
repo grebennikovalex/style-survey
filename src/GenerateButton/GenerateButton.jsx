@@ -66,11 +66,13 @@ export default function GenerateButton() {
         break;
       case 422: // Moderated
         setAlertType("error");
-        setAlertText(`Модерация запроса. Статус: ${response.status}`);
+        setAlertText(`Модерация запроса. Статус: ${response.status} ${result.errorDetails}`);
+        setLoading(false);
         break;
       default:
         setAlertType("error");
         setAlertText(response.status);
+        setLoading(false);
         // console.error(`Unexpected status`, response.status);
         break;
     }
@@ -149,6 +151,7 @@ export default function GenerateButton() {
                         } else {
                           setAlertType("error");
                           setAlertText(btnJobRresult.status);
+                          setLoading(false);
                           console.error(`Unexpected result.status`, btnJobRresult.status);
                           retry = false;
                         }
@@ -173,6 +176,7 @@ export default function GenerateButton() {
             } else {
               setAlertType("error");
               setAlertText(result.status);
+              setLoading(false);
               //   console.error(`Unexpected result.status`, result.status);
               retry = false;
             }
