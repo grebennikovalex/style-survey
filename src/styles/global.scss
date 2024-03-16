@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'TildaSans-Light';
-  src: url("../assets/TildaSans-Light.woff") format('woff');
+  font-family: "TildaSans-Light";
+  src: url("../assets/TildaSans-Light.woff") format("woff");
 }
 
 *,
@@ -20,4 +20,5 @@ p {
 html {
   box-sizing: border-box;
   width: 100%;
+  overflow: hidden;
 }

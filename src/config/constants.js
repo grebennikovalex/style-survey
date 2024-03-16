@@ -22,7 +22,7 @@ export const styleList = [
   { value: "mediterranean", label: "Средиземноморский" },
   { value: "russian", label: "Русский" },
   { value: "chalet", label: "Шале" },
-  { value: "boho-chic", label: "Бохо" },
+  { value: "bohemian eclectic", label: "Бохо" },
 ];
 
 export const colors = [
@@ -48,9 +48,16 @@ export const floors = [
 export const plants = [
   { value: "phytowall plants", label: '"Зелёная"  стена' },
   { value: "stabilized plants", label: "Стабилизированные растения" },
-  { value: "phytowall moss", label: "Мох" },
+  { value: "moss", label: "Мох" },
   { value: "bigger pot plants", label: "Комнатные большие растения" },
   { value: "smaller pot plants", label: "Комнатные маленькие растения" },
   { value: "no", label: "Не нужно зелени" },
   { value: "indifferent", label: "Не принципиально" },
 ];
+
+export const defaultValues = {
+  yesColor: "white",
+  noColor: "beige",
+  name: "",
+  phone: "",
+};

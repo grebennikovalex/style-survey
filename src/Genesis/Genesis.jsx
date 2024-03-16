@@ -5,9 +5,10 @@ import Layout from "../Layout/Layout";
 import Dropdown from "../ui_elements/Dropdown/Dropdown";
 import TextInput from "../ui_elements/TextInput/TextInput";
 import PhoneInput from "../ui_elements/PhoneInput/PhoneInput";
-import { rooms, styleList, colors, floors, plants } from "../config/constants";
+import { rooms, styleList, colors, floors, plants, defaultValues } from "../config/constants";
 import { fields } from "../config/fields";
-import GenContainer from "../GenContainer/GenContainer";
+import GenerateButton from "../GenerateButton/GenerateButton";
+import { title } from "../assets/texts";
 
 export default function Genesis() {
   const { room, interiorStyle, yesColor, noColor, floor, plant, firstName, phone } = fields;
@@ -15,10 +16,7 @@ export default function Genesis() {
 
   const form = useForm({
     mode: "onBlur",
-    defaultValues: {
-      yesColor: "white",
-      noColor: "beige",
-    },
+    defaultValues,
   });
   const { control, setValue, getValues } = form;
 
@@ -32,10 +30,13 @@ export default function Genesis() {
     let ind = colors.map((o) => o.value).indexOf(yesColorValue);
     if (ind + 1 > unwantedColors.length) ind = 0;
     setValue("noColor", unwantedColors[ind].value);
-  }, [getValues, unwantedColors]);
+  }, [setValue, unwantedColors]);
 
   return (
     <Layout>
+      <div className={style.infoContainer}>
+        <p className={style.title}>{title}</p>
+      </div>
       <FormProvider {...form}>
         <div className={style.fieldsContainer}>
           <TextInput name={firstName.name} required label={firstName.label} />
@@ -54,7 +55,7 @@ export default function Genesis() {
           <Dropdown name={noColor.name} options={unwantedColors} label={noColor.label} />
         </div>
 
-        <GenContainer />
+        <GenerateButton />
       </FormProvider>
     </Layout>
   );

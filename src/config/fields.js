@@ -25,10 +25,10 @@ export const fields = {
   },
   phone: {
     name: "phone",
-    label: "Номер телефона:*",
+    label: "Номер телефона *",
   },
   firstName: {
-    name: "user",
-    label: "Ваше имя:*",
+    name: "name",
+    label: "Ваше имя *",
   },
 };

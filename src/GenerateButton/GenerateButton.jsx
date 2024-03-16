@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 import Button from "../ui_elements/Button/Button";
 import { createPrompt } from "../createPrompt";
 import Alert from "../ui_elements/Alert/Alert";
+import { infotext } from "../assets/texts";
+import style from "./GenerateButton.module.scss";
+import SendButton from "../SendButton/SendButton";
 
 const sleep = (ms = 0) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -11,12 +14,14 @@ const discord = import.meta.env.VITE_DISCORD_TOKEN;
 const server = import.meta.env.VITE_SERVER_ID;
 const channel = import.meta.env.VITE_CHANNEL_ID;
 
-export default function GenContainer() {
+export default function GenerateButton() {
   const [url, setUrl] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const [alertType, setAlertType] = useState("started");
   const [alertText, setAlertText] = useState("");
+
+  const [showSendButton, setShowSendButton] = useState(false);
 
   const form = useFormContext();
 
@@ -127,8 +132,9 @@ export default function GenContainer() {
                       case 200:
                         if (btnJobRresult.status == "completed") {
                           if (btnJobRresult.attachments?.length) {
-                            setUrl(btnJobRresult.attachments[0].url);
                             setLoading(false);
+                            setUrl(btnJobRresult.attachments[0].url);
+                            setShowSendButton(true);
                           } else {
                             setAlertType("error");
                             setAlertText("Результат генерации не найден...");
@@ -179,14 +185,36 @@ export default function GenContainer() {
     }
   };
 
+  const getHeight = () => {
+    const elRect = document.getElementById("genesis-container").offsetHeight;
+    window.parent.postMessage(
+      {
+        type: "resize-iframe",
+        payload: {
+          height: elRect + 20,
+        },
+      },
+      "*"
+    );
+  };
+
+  useEffect(() => {
+    getHeight();
+  }, [loading, alertType, alertText, getHeight]);
+
   return (
     <>
-      <Button disabled={loading || !isValid} loading={loading} type="primary" text={"СГЕНЕРИРОВАТЬ"} onClick={generate} />
+      {showSendButton ? <SendButton url={url} /> : <Button disabled={loading || !isValid} loading={loading} type="primary" text={"СГЕНЕРИРОВАТЬ"} onClick={generate} />}
       {loading && <Alert type={alertType} text={alertText} />}
       {url && (
         <a href={url} target="_blank" style={{ width: "100%" }}>
-          <img src={url} style={{ width: "100%" }} />
+          <img src={url} style={{ width: "100%" }} onLoad={getHeight} />
         </a>
+      )}
+      {!loading && !url && (
+        <div className={style.infoContainer}>
+          <p className={style.infoParagraph}>{infotext}</p>
+        </div>
       )}
     </>
   );
