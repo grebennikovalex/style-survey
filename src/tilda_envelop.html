@@ -1,0 +1,47 @@
+<style>
+    .iframe-genesis-container {
+        display: flex;
+        max-width: 1160px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+         
+    @media (min-width: 769px) {
+       .iframe-genesis-container {
+          width: calc(100% - 40px);
+          } 
+    }
+    
+    @media (max-width: 768px) {
+       .iframe-genesis-container {
+          width: 100%;
+          margin: 110px auto 0 auto;
+        } 
+    }
+    
+    @media (max-width: 425px) {
+       .iframe-genesis-container {
+          width: 100%;
+          margin: 72px auto 0 auto;
+        } 
+    }
+    </style>
+    
+    <div class="iframe-genesis-container">
+    <iframe src="https://style-survey.web.app/"
+    style="display: block;  border: none; overflow: hidden;" height="100%" width="100%"/>
+    ></iframe>
+    </div>
+    
+    <script type="application/javascript">
+    const iframe = document.getElementsByClassName("iframe-genesis-container")[0];
+    window.addEventListener('message', (ev) => {
+       if(ev.data.type && ev.data.type === "resize-iframe") {
+        iframe.style.height = ev.data.payload.height + "px"
+      }
+    }, false)
+    </script>
+    
+    
+    
+    

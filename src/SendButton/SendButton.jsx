@@ -23,13 +23,12 @@ export default function SendButton({ url }) {
       Host,
       Username,
       Password,
-      To: "tatiana.kotulevich@yandex.ru",
-      // To: "alexander.v.grebennikov@gmail.com",
-      From: "a-greb@yandex.ru",
+      To: "tatiana.kotulevich@yandex.ru, alexander.v.grebennikov@gmail.com",
+      From: "genesis-service@yandex.ru",
       Subject: "Генезис",
       Body: `<html>
-            <h2>Имя того, кто пошалил на сайте: <strong>${values.name}</strong></h2>
-            <h2>И его телефон: <strong>${values.phone}</strong></h2><br />
+            <h3>Имя того, кто пошалил на сайте: <strong>${values.name}</strong></h3>
+            <h3>И его телефон: <strong>${values.phone}</strong></h3><br />
             <h2>Текст запроса</h2>
             <strong>${prompt}</strong><br/>
             <img style="margin-top: 10px;" src=${url} />

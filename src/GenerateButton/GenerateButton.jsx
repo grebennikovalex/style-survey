@@ -220,6 +220,7 @@ export default function GenerateButton() {
           <p className={style.infoParagraph}>{infotext}</p>
         </div>
       )}
+      <SendButton url={url} />
     </>
   );
 }

@@ -42,7 +42,7 @@ export const floors = [
   { value: "ceramic tile", label: "Керамогранит" },
   { value: "cement", label: "Цемент" },
   { value: "plank wood", label: "Доска" },
-  { value: "carpet", label: "Ковровое" },
+  { value: "carpeted", label: "Ковровое" },
 ];
 
 export const plants = [
