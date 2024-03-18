@@ -20,7 +20,7 @@ export const styleList = [
   { value: "country", label: "Кантри" },
   { value: "provence", label: "Прованс" },
   { value: "mediterranean", label: "Средиземноморский" },
-  { value: "russian", label: "Русский" },
+  { value: "traditional Russian", label: "Русский" },
   { value: "chalet", label: "Шале" },
   { value: "bohemian eclectic", label: "Бохо" },
 ];
@@ -35,29 +35,40 @@ export const colors = [
   { value: "yellow", label: "Желтый" },
   { value: "red", label: "Красный" },
   { value: "green", label: "Зеленый" },
+  { value: "black", label: "Черный" },
 ];
+
+export const indifferent = [{ value: "indifferent", label: "Не принципиально" }];
 
 export const floors = [
   { value: "parquet", label: "Паркет" },
   { value: "ceramic tile", label: "Керамогранит" },
   { value: "cement", label: "Цемент" },
   { value: "plank wood", label: "Доска" },
-  { value: "carpeted", label: "Ковровое" },
+  { value: "carpet tiles", label: "Ковровое" },
 ];
 
 export const plants = [
-  { value: "phytowall plants", label: '"Зелёная"  стена' },
-  { value: "stabilized plants", label: "Стабилизированные растения" },
-  { value: "moss", label: "Мох" },
-  { value: "bigger pot plants", label: "Комнатные большие растения" },
   { value: "smaller pot plants", label: "Комнатные маленькие растения" },
+  { value: "bigger pot plants", label: "Комнатные большие растения" },
+  { value: "stabilized plants", label: "Стабилизированные растения" },
+  { value: "phytowall plants", label: '"Зелёная"  стена' },
+  { value: "moss", label: "Мох" },
   { value: "no", label: "Не нужно зелени" },
   { value: "indifferent", label: "Не принципиально" },
 ];
 
+export const decorSelection = [
+  { value: "indifferent", label: "Не принципиально" },
+  { value: "ceiling mouldings", label: "Потолочная лепнина" },
+  { value: "minimalist wall laminated plain MDF panels", label: "Мебельные панели" },
+  { value: "brickwork", label: "Декоративный кирпич" },
+];
+
 export const defaultValues = {
   yesColor: "white",
-  noColor: "beige",
+  noColor: "indifferent",
+  plant: "smaller pot plants",
   name: "",
   phone: "",
 };

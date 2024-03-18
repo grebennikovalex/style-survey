@@ -5,25 +5,27 @@ import Layout from "../Layout/Layout";
 import Dropdown from "../ui_elements/Dropdown/Dropdown";
 import TextInput from "../ui_elements/TextInput/TextInput";
 import PhoneInput from "../ui_elements/PhoneInput/PhoneInput";
-import { rooms, styleList, colors, floors, plants, defaultValues } from "../config/constants";
+import { rooms, styleList, colors, floors, plants, indifferent, decorSelection, defaultValues } from "../config/constants";
 import { fields } from "../config/fields";
 import GenerateButton from "../GenerateButton/GenerateButton";
 import { title } from "../assets/texts";
 
 export default function Genesis() {
-  const { room, interiorStyle, yesColor, noColor, floor, plant, firstName, phone } = fields;
-  const [unwantedColors, setUnwantedColors] = useState(colors);
+  const { room, interiorStyle, yesColor, noColor, floor, plant, firstName, phone, backgroundColor, decor } = fields;
+  const [unwantedColors, setUnwantedColors] = useState(indifferent.concat(colors));
 
   const form = useForm({
     mode: "onBlur",
     defaultValues,
   });
-  const { control, setValue, getValues } = form;
+  const { control, setValue } = form;
 
   const yesColorValue = useWatch({ control, name: "yesColor" });
+  const noColorValue = useWatch({ control, name: "noColor" });
 
   useEffect(() => {
-    setUnwantedColors(colors.filter((color) => yesColorValue !== color.value));
+    if (noColorValue === "indifferent") return;
+    setUnwantedColors(indifferent.concat(colors).filter((color) => yesColorValue !== color.value));
   }, [yesColorValue, setUnwantedColors]);
 
   useEffect(() => {
@@ -53,6 +55,10 @@ export default function Genesis() {
         <div className={style.fieldsContainer}>
           <Dropdown name={yesColor.name} options={colors} label={yesColor.label} />
           <Dropdown name={noColor.name} options={unwantedColors} label={noColor.label} />
+        </div>
+        <div className={style.fieldsContainer}>
+          <Dropdown name={backgroundColor.name} options={colors} label={backgroundColor.label} />
+          <Dropdown name={decor.name} options={decorSelection} label={decor.label} />
         </div>
 
         <GenerateButton />

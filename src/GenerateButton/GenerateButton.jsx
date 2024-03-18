@@ -151,8 +151,7 @@ export default function GenerateButton() {
                         } else {
                           setAlertType("error");
                           setAlertText(btnJobRresult.status);
-                          setLoading(false);
-                          console.error(`Unexpected result.status`, btnJobRresult.status);
+                          // console.error(`Unexpected result.status`, btnJobRresult.status);
                           retry = false;
                         }
                         break;
@@ -175,8 +174,7 @@ export default function GenerateButton() {
               await sleep(5 * 1000);
             } else {
               setAlertType("error");
-              setAlertText(result.status);
-              setLoading(false);
+              setAlertText(`проверка состояния #${attempt} - ${result.status}`);
               //   console.error(`Unexpected result.status`, result.status);
               retry = false;
             }
@@ -208,7 +206,21 @@ export default function GenerateButton() {
 
   return (
     <>
-      {showSendButton ? <SendButton url={url} /> : <Button disabled={loading || !isValid} loading={loading} type="primary" text={"СГЕНЕРИРОВАТЬ"} onClick={generate} />}
+      {showSendButton ? (
+        <SendButton url={url} />
+      ) : (
+        <Button
+          disabled={loading || !isValid}
+          loading={loading}
+          type="primary"
+          text={"СГЕНЕРИРОВАТЬ"}
+          // onClick={() => {
+          //   const values = getValues();
+          //   console.log(createPrompt(values));
+          // }}
+          onClick={generate}
+        />
+      )}
       {loading && <Alert type={alertType} text={alertText} />}
       {url && (
         <a href={url} target="_blank" style={{ width: "100%" }}>
@@ -220,7 +232,6 @@ export default function GenerateButton() {
           <p className={style.infoParagraph}>{infotext}</p>
         </div>
       )}
-      <SendButton url={url} />
     </>
   );
 }

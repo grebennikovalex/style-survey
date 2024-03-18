@@ -15,6 +15,14 @@ export const fields = {
     name: "yesColor",
     label: "Какой цвет непременно должен присутствовать в вашем интерьере?",
   },
+  backgroundColor: {
+    name: "backgroundColor",
+    label: "Предпочтительный цвет стен",
+  },
+  decor: {
+    name: "decor",
+    label: "Какие элементы интерьерного декора использовать?",
+  },
   interiorStyle: {
     name: "style",
     label: "Какой из стилей интерьеров вам ближе?",
