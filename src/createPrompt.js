@@ -32,7 +32,7 @@ export const createPrompt = (values) => {
     no = "";
   }
 
-  const prompt = `${values.room} in an apartment, ${values.style} style, ${values.backgroundColor} walls, ${decoration} one wall of ${values.yesColor} color, ${values.floor} floor, ${plants} ${no} ${noColor} ${noPlants}`;
+  const prompt = `Apartment in ${values.style} style,  ${values.room}, ${values.backgroundColor} walls, ${decoration} one wall of ${values.yesColor} color, ${values.floor} floor, ${plants} ${no} ${noColor} ${noPlants}`;
   // console.log(prompt);
   return prompt;
 };

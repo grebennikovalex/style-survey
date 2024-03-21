@@ -1,12 +1,12 @@
 export const rooms = [
-  { value: "Living room", label: "Гостиная" },
-  { value: "Dining room", label: "Столовая" },
-  { value: "Dining room with kitchen", label: "Кухня-столовая" },
-  { value: "Kitchen", label: "Кухня" },
-  { value: "Bedroom", label: "Спальня" },
-  { value: "Kid's room", label: "Детская" },
-  { value: "Study room", label: "Кабинет" },
-  { value: "Bathroom", label: "Ванная" },
+  { value: "living room", label: "Гостиная" },
+  { value: "dining room", label: "Столовая" },
+  { value: "dining room with kitchen", label: "Кухня-столовая" },
+  { value: "kitchen", label: "Кухня" },
+  { value: "bedroom", label: "Спальня" },
+  { value: "kid's room", label: "Детская" },
+  { value: "study room", label: "Кабинет" },
+  { value: "bathroom", label: "Ванная" },
 ];
 
 export const styleList = [
@@ -62,7 +62,7 @@ export const decorSelection = [
   { value: "indifferent", label: "Не принципиально" },
   { value: "ceiling mouldings", label: "Потолочная лепнина" },
   { value: "minimalist wall laminated plain MDF panels", label: "Мебельные панели" },
-  { value: "brickwork", label: "Декоративный кирпич" },
+  { value: "stonework", label: "Декоративный необработанный камень" },
 ];
 
 export const defaultValues = {
