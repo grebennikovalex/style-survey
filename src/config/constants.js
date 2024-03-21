@@ -11,16 +11,16 @@ export const rooms = [
 
 export const styleList = [
   { value: "modern minimalist", label: "Современный минимализм" },
-  { value: "modern classical", label: "Современная классика" },
-  { value: "loft", label: "Лофт" },
+  { value: "modern classical", label: "Современный классический стиль" },
+  { value: "loft", label: "Стиль Лофт" },
   { value: "Art Nouveau", label: "Модерн начала XX века" },
-  { value: "Art Deco", label: "Ар-деко 1920-е годы XX века" },
+  // { value: "Art Deco", label: "Ар-деко 1920-е годы XX века" },
   { value: "mid-century", label: "Модернизм середины XX века" },
-  { value: "scandinavian", label: "Скандинавский" },
+  { value: "scandinavian", label: "Скандинавский стиль" },
   { value: "country", label: "Кантри" },
   { value: "provence", label: "Прованс" },
   { value: "mediterranean", label: "Средиземноморский" },
-  { value: "traditional Russian", label: "Русский" },
+  // { value: "traditional Russian", label: "Русский" },
   { value: "chalet", label: "Шале" },
   { value: "bohemian eclectic", label: "Бохо" },
 ];
@@ -45,13 +45,13 @@ export const floors = [
   { value: "ceramic tile", label: "Керамогранит" },
   { value: "cement", label: "Цемент" },
   { value: "plank wood", label: "Доска" },
-  { value: "carpet tiles", label: "Ковровое" },
+  // { value: "carpet tiles", label: "Ковровое" },
 ];
 
 export const plants = [
   { value: "smaller pot plants", label: "Комнатные маленькие растения" },
   { value: "bigger pot plants", label: "Комнатные большие растения" },
-  { value: "stabilized plants", label: "Стабилизированные растения" },
+  // { value: "stabilized plants", label: "Стабилизированные растения" },
   { value: "phytowall plants", label: '"Зелёная"  стена' },
   { value: "moss", label: "Мох" },
   { value: "no", label: "Не нужно зелени" },

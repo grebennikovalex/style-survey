@@ -13,7 +13,7 @@ export const fields = {
   },
   yesColor: {
     name: "yesColor",
-    label: "Какой цвет непременно должен присутствовать в вашем интерьере?",
+    label: "Какой цвет вы хотели бы видеть в качестве акцента?",
   },
   backgroundColor: {
     name: "backgroundColor",

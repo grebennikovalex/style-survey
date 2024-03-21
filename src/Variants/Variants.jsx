@@ -1,12 +1,20 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode } from "swiper/modules";
+import { Autoplay, FreeMode } from "swiper/modules";
 import { getHeight } from "../getHeight";
 
 export default function Variants({ urls }) {
   if (!urls) return;
   return (
-    <Swiper modules={[FreeMode]} spaceBetween={50} slidesPerView="auto">
+    <Swiper
+      modules={[Autoplay, FreeMode]}
+      spaceBetween={42}
+      slidesPerView="auto"
+      autoplay={{
+        delay: 2500,
+        disableOnInteraction: false,
+      }}
+    >
       {urls.map((url) => {
         return (
           <SwiperSlide key={url}>

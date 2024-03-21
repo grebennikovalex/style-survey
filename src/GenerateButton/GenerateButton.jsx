@@ -28,7 +28,7 @@ const testurls = [
 ];
 
 export default function GenerateButton() {
-  const [images, setImages] = useState(testurls);
+  const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(false);
   const [alertType, setAlertType] = useState("started");
   const [alertText, setAlertText] = useState("");

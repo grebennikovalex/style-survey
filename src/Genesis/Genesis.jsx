@@ -5,7 +5,16 @@ import Layout from "../Layout/Layout";
 import Dropdown from "../ui_elements/Dropdown/Dropdown";
 import TextInput from "../ui_elements/TextInput/TextInput";
 import PhoneInput from "../ui_elements/PhoneInput/PhoneInput";
-import { rooms, styleList, colors, floors, plants, indifferent, decorSelection, defaultValues } from "../config/constants";
+import {
+  rooms,
+  styleList,
+  colors,
+  floors,
+  plants,
+  indifferent,
+  decorSelection,
+  defaultValues,
+} from "../config/constants";
 import { fields } from "../config/fields";
 import GenerateButton from "../GenerateButton/GenerateButton";
 import { title } from "../assets/texts";
@@ -41,24 +50,29 @@ export default function Genesis() {
       </div>
       <FormProvider {...form}>
         <div className={style.fieldsContainer}>
-          <TextInput name={firstName.name} required label={firstName.label} />
-          <PhoneInput name={phone.name} required label={phone.label} />
+          <Dropdown name={interiorStyle.name} options={styleList} label={interiorStyle.label} />
+        </div>
+        <div className={style.sectionContainer}>
+          <p className={style.section}>Дополнительные опции</p>
         </div>
         <div className={style.fieldsContainer}>
           <Dropdown name={room.name} options={rooms} label={room.label} />
-          <Dropdown name={interiorStyle.name} options={styleList} label={interiorStyle.label} />
+          <Dropdown name={plant.name} options={plants} label={plant.label} />
         </div>
         <div className={style.fieldsContainer}>
-          <Dropdown name={plant.name} options={plants} label={plant.label} />
+          <Dropdown name={backgroundColor.name} options={colors} label={backgroundColor.label} />
           <Dropdown name={floor.name} options={floors} label={floor.label} />
         </div>
         <div className={style.fieldsContainer}>
           <Dropdown name={yesColor.name} options={colors} label={yesColor.label} />
           <Dropdown name={noColor.name} options={unwantedColors} label={noColor.label} />
         </div>
+        <div className={style.sectionContainer}>
+          <p className={style.section}>Контактная информация</p>
+        </div>
         <div className={style.fieldsContainer}>
-          <Dropdown name={backgroundColor.name} options={colors} label={backgroundColor.label} />
-          <Dropdown name={decor.name} options={decorSelection} label={decor.label} />
+          <TextInput name={firstName.name} required label={firstName.label} />
+          <PhoneInput name={phone.name} required label={phone.label} />
         </div>
 
         <GenerateButton />
