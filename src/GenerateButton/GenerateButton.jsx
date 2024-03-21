@@ -28,7 +28,7 @@ const testurls = [
 ];
 
 export default function GenerateButton() {
-  const [images, setImages] = useState([]);
+  const [images, setImages] = useState(testurls);
   const [loading, setLoading] = useState(false);
   const [alertType, setAlertType] = useState("started");
   const [alertText, setAlertText] = useState("");
@@ -104,6 +104,7 @@ export default function GenerateButton() {
         switch (response.status) {
           case 200:
             if (result.status == "completed") {
+              setAlertType("progress");
               let images = [];
               for (let i = 1; i < 5; i++) {
                 setAlertText(`Успешно! Создаем вариант #${i}`);
@@ -114,6 +115,11 @@ export default function GenerateButton() {
               send(images);
               retry = false;
               setLoading(false);
+              const scrollEl = document.querySelector("#genesis_generate_button");
+              scrollEl?.scrollIntoView({
+                block: "start",
+                behavior: "smooth",
+              });
             } else if (result.status == "started" || result.status == "progress") {
               setAlertType(result.status);
               setAlertText(`проверка состояния #${attempt} - ${result.status}`);
@@ -136,8 +142,16 @@ export default function GenerateButton() {
   };
 
   const send = async (images) => {
+    if (!images && !images.length) {
+      console.error("Mail: there're no images...");
+      return false;
+    }
     const values = getValues();
     const prompt = createPrompt(values);
+
+    const imgsBunch = images.map((image) => {
+      return image ? `<img style="margin-top: 10px;" src=${image} />` : "";
+    });
 
     const emailSent = await Email.send({
       Host,
@@ -151,16 +165,15 @@ export default function GenerateButton() {
             <h3>И его телефон: <strong>${values.phone}</strong></h3><br />
             <h2>Текст запроса</h2>
             <strong>${prompt}</strong><br/>
-            <img style="margin-top: 10px;" src=${images[0]} />
-            <img style="margin-top: 10px;" src=${images[1]} />
-            <img style="margin-top: 10px;" src=${images[2]} />
-            <img style="margin-top: 10px;" src=${images[3]} />
+            ${imgsBunch}
             </br>
             </html>`,
     });
 
     if (emailSent == "OK") {
-      console.log("Email sent");
+      console.info("Email sent");
+    } else {
+      console.info("Email failed");
     }
   };
 
@@ -176,6 +189,7 @@ export default function GenerateButton() {
         type="primary"
         text={"СГЕНЕРИРОВАТЬ"}
         onClick={generate}
+        id="genesis_generate_button"
       />
       <Variants urls={images} />
       {loading && <Alert type={alertType} text={alertText} />}

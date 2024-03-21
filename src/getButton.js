@@ -36,13 +36,14 @@ export const getButton = async (globalJobid, button) => {
 
       switch (btnJobResponse.status) {
         case 200:
-          if (btnJobRresult.status == "completed") {
+          if (btnJobRresult.status == "completed" || attempt === 20) {
             if (btnJobRresult.attachments?.length) {
               return btnJobRresult.attachments[0].url;
             } else {
               console.error("completed jobid has no attachments");
+              return "";
             }
-            retry = false;
+            // retry = false;
           } else if (btnJobRresult.status == "started" || btnJobRresult.status == "progress") {
             // console.log(`attempt #${attempt} sleeping for 5 secs...`, btnJobRresult.status);
             await sleep(5 * 1000);

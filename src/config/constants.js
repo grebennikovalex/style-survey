@@ -1,4 +1,5 @@
 export const rooms = [
+  { value: "indifferent", label: "Не принципиально" },
   { value: "living room", label: "Гостиная" },
   { value: "dining room", label: "Столовая" },
   { value: "dining room with kitchen", label: "Кухня-столовая" },
@@ -49,13 +50,13 @@ export const floors = [
 ];
 
 export const plants = [
+  { value: "indifferent", label: "Не принципиально" },
   { value: "smaller pot plants", label: "Комнатные маленькие растения" },
   { value: "bigger pot plants", label: "Комнатные большие растения" },
   // { value: "stabilized plants", label: "Стабилизированные растения" },
   { value: "phytowall plants", label: '"Зелёная"  стена' },
   { value: "moss", label: "Мох" },
   { value: "no", label: "Не нужно зелени" },
-  { value: "indifferent", label: "Не принципиально" },
 ];
 
 export const decorSelection = [

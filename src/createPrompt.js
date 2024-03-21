@@ -5,7 +5,8 @@ export const createPrompt = (values) => {
   let plants = values.plant;
 
   let noColor = `${values.noColor} color,`;
-  let decoration = `${values.decor} decoration,`;
+  // let decoration = `${values.decor} decoration,`;
+  let room = `${values.room},`;
 
   if (values.plant === "no") {
     noPlants = "plants";
@@ -32,7 +33,11 @@ export const createPrompt = (values) => {
     no = "";
   }
 
-  const prompt = `Apartment in ${values.style} style,  ${values.room}, ${values.backgroundColor} walls, ${decoration} one wall of ${values.yesColor} color, ${values.floor} floor, ${plants} ${no} ${noColor} ${noPlants}`;
+  if (values.room === "indifferent") {
+    room = "";
+  }
+
+  const prompt = `Apartment in ${values.style} style, ${room} ${values.backgroundColor} walls, one ${values.yesColor} wall, ${values.floor} floors, ${plants} ${no} ${noColor} ${noPlants}`;
   // console.log(prompt);
   return prompt;
 };

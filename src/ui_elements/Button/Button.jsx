@@ -3,9 +3,17 @@ import cn from "classnames";
 import Spinner from "../Spinner/Spinner";
 import style from "./Button.module.scss";
 
-export default function Button({ onClick = () => {}, type = "primary", disabled = false, loading = false, text }) {
+export default function Button({
+  onClick = () => {},
+  type = "primary",
+  disabled = false,
+  loading = false,
+  text,
+  id = null,
+}) {
   return (
     <button
+      id={id}
       onClick={onClick}
       disabled={disabled}
       className={cn(style.button, {

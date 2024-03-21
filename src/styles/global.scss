@@ -20,5 +20,25 @@ p {
 html {
   box-sizing: border-box;
   width: 100%;
-  // overflow: hidden;
+  overflow: hidden;
+}
+
+:root {
+  --swiper-scrollbar-border-radius: 9px;
+  --swiper-scrollbar-top: 12px;
+  --swiper-scrollbar-bottom: auto;
+  --swiper-scrollbar-left: auto;
+  --swiper-scrollbar-right: auto;
+  --swiper-scrollbar-sides-offset: 1%;
+  --swiper-scrollbar-drag-bg-color: rgba(255, 255, 255, 0.8);
+  --swiper-scrollbar-size: 18px;
+
+  @media (max-width: "425px") {
+    --swiper-scrollbar-size: 10px;
+  }
+}
+
+.swiper-scrollbar {
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.1);
 }
