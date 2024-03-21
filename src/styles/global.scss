@@ -24,17 +24,17 @@ html {
 }
 
 :root {
-  --swiper-scrollbar-border-radius: 9px;
+  --swiper-scrollbar-border-radius: 6px;
   --swiper-scrollbar-top: 12px;
   --swiper-scrollbar-bottom: auto;
   --swiper-scrollbar-left: auto;
   --swiper-scrollbar-right: auto;
   --swiper-scrollbar-sides-offset: 1%;
   --swiper-scrollbar-drag-bg-color: rgba(255, 255, 255, 0.8);
-  --swiper-scrollbar-size: 18px;
+  --swiper-scrollbar-size: 12px;
 
   @media (max-width: "425px") {
-    --swiper-scrollbar-size: 10px;
+    --swiper-scrollbar-size: 8px;
   }
 }
 

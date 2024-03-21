@@ -2,7 +2,7 @@ const token = import.meta.env.VITE_API_TOKEN;
 
 const sleep = (ms = 0) => new Promise((resolve) => setTimeout(resolve, ms));
 
-export const getButton = async (globalJobid, button) => {
+export const getUButton = async (globalJobid, button) => {
   const dataButton = {
     method: "POST",
     headers: {
@@ -36,7 +36,7 @@ export const getButton = async (globalJobid, button) => {
 
       switch (btnJobResponse.status) {
         case 200:
-          if (btnJobRresult.status == "completed" || attempt === 20) {
+          if (btnJobRresult.status == "completed" || attempt === 8) {
             if (btnJobRresult.attachments?.length) {
               return btnJobRresult.attachments[0].url;
             } else {

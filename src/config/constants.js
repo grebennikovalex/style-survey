@@ -51,8 +51,8 @@ export const floors = [
 
 export const plants = [
   { value: "indifferent", label: "Не принципиально" },
-  { value: "smaller pot plants", label: "Комнатные маленькие растения" },
-  { value: "bigger pot plants", label: "Комнатные большие растения" },
+  { value: "small pot plants", label: "Комнатные маленькие растения" },
+  { value: "big pot plants", label: "Комнатные большие растения" },
   // { value: "stabilized plants", label: "Стабилизированные растения" },
   { value: "phytowall plants", label: '"Зелёная"  стена' },
   { value: "moss", label: "Мох" },

@@ -18,16 +18,16 @@ export const createPrompt = (values) => {
   }
 
   if (values.plant === "moss") {
-    plants = "phytowall filled with light green shallow moss only";
+    plants = "shallow phytowall light green moss";
   }
 
   if (values.noColor === "indifferent") {
     noColor = "";
   }
 
-  if (values.decor === "indifferent") {
-    decoration = "";
-  }
+  // if (values.decor === "indifferent") {
+  //   decoration = "";
+  // }
 
   if (values.plant !== "no" && values.noColor === "indifferent") {
     no = "";

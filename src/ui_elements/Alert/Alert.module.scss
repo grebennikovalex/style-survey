@@ -7,6 +7,7 @@
   border-radius: 4px;
   background-color: $disabled;
   color: $secondary-text;
+  width: 100%;
 
   &.started {
     background-color: $alert-initial-bg;

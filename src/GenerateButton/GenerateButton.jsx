@@ -6,8 +6,9 @@ import Alert from "../ui_elements/Alert/Alert";
 import { infotext } from "../assets/texts";
 import style from "./GenerateButton.module.scss";
 import { getHeight } from "../getHeight";
-import { getButton } from "../getButton";
+import { getUButton } from "../getUButton";
 import Variants from "../Variants/Variants";
+import { showBackdrop, hideBackdrop } from "../backdropControls";
 
 const sleep = (ms = 0) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -24,11 +25,12 @@ const testurls = [
   "https://cdn.discordapp.com/attachments/1215254077462814750/1220374833507074110/kotulevich_design_Apartment_in_modern_minimalist_style_dining_r_40c0bb47-fc01-4efd-9903-a66d085113ae.png?ex=660eb5a1&is=65fc40a1&hm=950b422a680895573580526360b871ad49f507b21b1925b9ca600fb3808661eb&",
   "https://cdn.discordapp.com/attachments/1215254077462814750/1220374904453468180/kotulevich_design_Apartment_in_modern_minimalist_style_dining_r_67e7ed0f-195d-4caa-9043-422883fda9c4.png?ex=660eb5b2&is=65fc40b2&hm=79c72eaa77c8d91c1f51e33e2161dc891f299ca61ef461c778040d68a59bc1a5&",
   "https://cdn.discordapp.com/attachments/1215254077462814750/1220374952088309800/kotulevich_design_Apartment_in_modern_minimalist_style_dining_r_f2dde910-aa8f-4be2-a9aa-768b89f89992.png?ex=660eb5be&is=65fc40be&hm=e74032f70d0c60faf5d76216bbef9d320329291c2001f1ecd0422f9d94d87850&",
+  "",
   "https://cdn.discordapp.com/attachments/1215254077462814750/1220375004902985748/kotulevich_design_Apartment_in_modern_minimalist_style_dining_r_4006a9e3-7fb4-4671-9d7e-3546737c9c2e.png?ex=660eb5ca&is=65fc40ca&hm=bf8b4e7eabe1c0ef131fa4af149c67238fed314a1e319577374c9bfe859788c9&",
 ];
 
 export default function GenerateButton() {
-  const [images, setImages] = useState(testurls);
+  const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(false);
   const [alertType, setAlertType] = useState("started");
   const [alertText, setAlertText] = useState("");
@@ -108,7 +110,7 @@ export default function GenerateButton() {
               let images = [];
               for (let i = 1; i < 5; i++) {
                 setAlertText(`Успешно! Создаем вариант #${i}`);
-                const image = await getButton(jobid, `U${i}`);
+                const image = await getUButton(jobid, `U${i}`);
                 images.push(image);
               }
               setImages(images);
@@ -181,6 +183,14 @@ export default function GenerateButton() {
     getHeight();
   }, [loading, alertType, alertText, getHeight]);
 
+  useEffect(() => {
+    if (loading) {
+      showBackdrop();
+    } else {
+      hideBackdrop();
+    }
+  }, [loading, showBackdrop, hideBackdrop]);
+
   return (
     <>
       <Button
@@ -191,6 +201,7 @@ export default function GenerateButton() {
         onClick={generate}
         id="genesis_generate_button"
       />
+
       <Variants urls={images} />
       {loading && <Alert type={alertType} text={alertText} />}
 

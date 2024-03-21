@@ -14,15 +14,17 @@ export default function Variants({ urls }) {
       spaceBetween={42}
       slidesPerView="auto"
     >
-      {urls.map((url) => {
-        return (
-          <SwiperSlide key={url}>
-            <a href={url} target="_blank" style={{ width: "100%" }}>
-              <img src={url} style={{ width: "100%" }} onLoad={getHeight} />
-            </a>
-          </SwiperSlide>
-        );
-      })}
+      {urls
+        .filter((url) => url)
+        .map((url) => {
+          return (
+            <SwiperSlide key={url}>
+              <a href={url} target="_blank" style={{ width: "100%" }}>
+                <img src={url} style={{ width: "100%" }} onLoad={getHeight} />
+              </a>
+            </SwiperSlide>
+          );
+        })}
     </Swiper>
   );
 }
