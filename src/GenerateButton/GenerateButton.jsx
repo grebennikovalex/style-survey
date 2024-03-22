@@ -9,6 +9,9 @@ import { getHeight } from "../getHeight";
 import { getUButton } from "../getUButton";
 import Variants from "../Variants/Variants";
 import { showBackdrop, hideBackdrop } from "../backdropControls";
+import TextInput from "../ui_elements/TextInput/TextInput";
+import PhoneInput from "../ui_elements/PhoneInput/PhoneInput";
+import { fields } from "../config/fields";
 
 const sleep = (ms = 0) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -35,6 +38,8 @@ export default function GenerateButton() {
   const [alertType, setAlertType] = useState("started");
   const [alertText, setAlertText] = useState("");
 
+  const { firstName, phone } = fields;
+
   const form = useFormContext();
 
   const {
@@ -45,6 +50,7 @@ export default function GenerateButton() {
   const generate = async () => {
     setImages([]);
     setAlertType("started");
+    setAlertText("");
     setLoading(true);
 
     const values = getValues();
@@ -193,14 +199,27 @@ export default function GenerateButton() {
 
   return (
     <>
-      <Button
-        disabled={loading || !isValid}
-        loading={loading}
-        type="primary"
-        text={"СГЕНЕРИРОВАТЬ"}
-        onClick={generate}
-        id="genesis_generate_button"
-      />
+      <form
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            e.preventDefault();
+            generate();
+          }
+        }}
+      >
+        <div className={style.fieldsContainer}>
+          <TextInput name={firstName.name} required label={firstName.label} />
+          <PhoneInput name={phone.name} required label={phone.label} />
+        </div>
+        <Button
+          disabled={loading || !isValid}
+          loading={loading}
+          type="primary"
+          text={"СГЕНЕРИРОВАТЬ"}
+          onClick={generate}
+          id="genesis_generate_button"
+        />
+      </form>
 
       <Variants urls={images} />
       {loading && <Alert type={alertType} text={alertText} />}

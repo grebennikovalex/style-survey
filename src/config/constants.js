@@ -1,6 +1,7 @@
 export const rooms = [
   { value: "indifferent", label: "Не принципиально" },
   { value: "living room", label: "Гостиная" },
+  { value: "living room with fireplace", label: "Гостиная с камином" },
   { value: "dining room", label: "Столовая" },
   { value: "dining room with kitchen", label: "Кухня-столовая" },
   { value: "kitchen", label: "Кухня" },
@@ -22,7 +23,7 @@ export const styleList = [
   { value: "provence", label: "Прованс" },
   { value: "mediterranean", label: "Средиземноморский" },
   // { value: "traditional Russian", label: "Русский" },
-  { value: "chalet", label: "Шале" },
+  { value: "traditional Swiss chalet", label: "Альпийское шале" },
   { value: "bohemian eclectic", label: "Бохо" },
 ];
 
@@ -69,7 +70,7 @@ export const decorSelection = [
 export const defaultValues = {
   yesColor: "white",
   noColor: "indifferent",
-  plant: "smaller pot plants",
+  plant: "indifferent",
   name: "",
   phone: "",
 };

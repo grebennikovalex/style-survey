@@ -37,7 +37,7 @@ export const createPrompt = (values) => {
     room = "";
   }
 
-  const prompt = `Apartment in ${values.style} style, ${room} ${values.backgroundColor} walls, one ${values.yesColor} wall, ${values.floor} floors, ${plants} ${no} ${noColor} ${noPlants}`;
+  const prompt = `Interior of apartment in ${values.style} style, ${room} ${values.backgroundColor} walls, one ${values.yesColor} wall, ${values.floor} floors, ${plants} ${no} ${noColor} ${noPlants}`;
   // console.log(prompt);
   return prompt;
 };
