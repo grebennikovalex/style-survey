@@ -73,4 +73,5 @@ export const defaultValues = {
   plant: "indifferent",
   name: "",
   phone: "",
+  ex_prompt: "Puppy surrounded by kittens with ugly faces",
 };

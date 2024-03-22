@@ -7,6 +7,7 @@ import { rooms, styleList, colors, floors, plants, indifferent, defaultValues } 
 import { fields } from "../config/fields";
 import GenerateButton from "../GenerateButton/GenerateButton";
 import { title } from "../assets/texts";
+import Experimental from "../Experimental/Experimental";
 
 export default function Genesis() {
   const { room, interiorStyle, yesColor, noColor, floor, plant, firstName, phone, backgroundColor, decor } = fields;
@@ -45,6 +46,7 @@ export default function Genesis() {
         </div>
 
         <GenerateButton />
+        <Experimental />
       </FormProvider>
     </Layout>
   );
